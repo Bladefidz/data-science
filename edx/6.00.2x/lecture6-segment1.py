@@ -29,13 +29,13 @@ class Location(object):
 class Field(object):
     def __init__(self):
         self.drunks = {}
-        
+
     def addDrunk(self, drunk, loc):
         if drunk in self.drunks:
             raise ValueError('Duplicate drunk')
         else:
             self.drunks[drunk] = loc
-            
+
     def moveDrunk(self, drunk):
         if drunk not in self.drunks:
             raise ValueError('Drunk not in field')
@@ -43,7 +43,7 @@ class Field(object):
         currentLocation = self.drunks[drunk]
         #use move method of Location to get new location
         self.drunks[drunk] = currentLocation.move(xDist, yDist)
-        
+
     def getLoc(self, drunk):
         if drunk not in self.drunks:
             raise ValueError('Drunk not in field')
@@ -61,6 +61,14 @@ class Drunk(object):
 
 class UsualDrunk(Drunk):
     def takeStep(self):
-        stepChoices = [(0,1), (0,-1), (1, 0), (-1, 0)]
+        stepChoices = [(0.0,1.0), (0.0,-1.0), (1.0, 0.0), (-1.0, 0.0)]
+        return random.choice(stepChoices)
+
+class coldDrunk(object):
+    """
+        Always move to the south using biased walk.
+    """
+    def takeStep(self):
+        stepChoices = [(0.0,0.9), (0.0,-1.1), (1.0, 0.0), (-1.0, 0.0)]
         return random.choice(stepChoices)
 

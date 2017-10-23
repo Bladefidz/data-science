@@ -25,7 +25,7 @@ class Edge(object):
         return self.dest
     def __str__(self):
         return self.src.getName() + '->' + self.dest.getName()
-               
+
 class Digraph(object):
     """edges is a dict mapping each node to a list of
     its children"""
@@ -64,7 +64,7 @@ class Graph(Digraph):
         Digraph.addEdge(self, edge)
         rev = Edge(edge.getDestination(), edge.getSource())
         Digraph.addEdge(self, rev)
-    
+
 def buildCityGraph(graphType):
     g = graphType()
     for name in ('Boston', 'Providence', 'New York', 'Chicago',
@@ -90,7 +90,7 @@ def printPath(path):
         result = result + str(path[i])
         if i != len(path) - 1:
             result = result + '->'
-    return result 
+    return result
 
 def DFS(graph, start, end, path, shortest, toPrint = False):
     """Assumes graph is a Digraph; start and end are nodes;
@@ -111,7 +111,7 @@ def DFS(graph, start, end, path, shortest, toPrint = False):
         elif toPrint:
             print('Already visited', node)
     return shortest
-    
+
 def shortestPath(graph, start, end, toPrint = False):
     """Assumes graph is a Digraph; start and end are nodes
        Returns a shortest path from start to end in graph"""
@@ -153,28 +153,28 @@ def shortestPath(graph, start, end, toPrint = False):
     """Assumes graph is a Digraph; start and end are nodes
        Returns a shortest path from start to end in graph"""
     return BFS(graph, start, end, toPrint)
-    
+
 testSP('Boston', 'Phoenix')
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #def cost(path):
 #    result = 0
@@ -182,7 +182,7 @@ testSP('Boston', 'Phoenix')
 #        result += str(path[i])
 #        if i != len(path) - 1:
 #            result = result + '->'
-#    return result 
+#    return result
 #
 #
 #def DFS(graph, start, end, path, shortest, toPrint = False):
@@ -202,7 +202,7 @@ testSP('Boston', 'Phoenix')
 #                              toPrint)
 #                if newPath != None:
 #                    shortest = newPath
-#                    
+#
 #def testSP():
 #    nodes = []
 #    for name in ('Boston', 'Providence', 'New York', 'Chicago',
@@ -225,5 +225,5 @@ testSP('Boston', 'Phoenix')
 #    print('Shortest path is', printPath(sp))
 #    sp = BFS(g, nodes[0], nodes[5])
 #    print('Shortest path found by BFS:', printPath(sp))
-#    
+#
 #testSP()
