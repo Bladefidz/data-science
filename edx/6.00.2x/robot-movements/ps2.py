@@ -575,4 +575,4 @@ def showPlot2(title, x_label, y_label):
 #
 # 2) Write a function call to showPlot2 that generates an appropriately-labeled
 #     plot.
-showPlot2("80 % cleaning varying shape of room", "Aspect Ratio", "Time Steps")
+# showPlot2("80 % cleaning varying shape of room", "Aspect Ratio", "Time Steps")
