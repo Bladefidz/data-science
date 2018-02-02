@@ -176,10 +176,10 @@ degrees = (2, 4, 8, 16)
 # genNoisyParabolicData(a, b, c, xVals,
 #                       'Dataset 2.txt')
 
-xVals1, yVals1 = getData('Dataset 1.txt')
-models1 = genFits(xVals1, yVals1, degrees)
-testFits(models1, degrees, xVals1, yVals1,
-        'DataSet 1.txt')
+# xVals1, yVals1 = getData('Dataset 1.txt')
+# models1 = genFits(xVals1, yVals1, degrees)
+# testFits(models1, degrees, xVals1, yVals1,
+#         'DataSet 1.txt')
 
 pylab.figure()
 xVals2, yVals2 = getData('Dataset 2.txt')
@@ -187,11 +187,11 @@ models2 = genFits(xVals2, yVals2, degrees)
 testFits(models2, degrees, xVals2, yVals2,
          'DataSet 2.txt')
 
-pylab.figure()
-testFits(models1, degrees, xVals2, yVals2,
-         'DataSet 2/Model 1')
-pylab.figure()
-testFits(models2, degrees, xVals1, yVals1,
-         'DataSet 1/Model 2')
+# pylab.figure()
+# testFits(models1, degrees, xVals2, yVals2,
+#          'DataSet 2/Model 1')
+# pylab.figure()
+# testFits(models2, degrees, xVals1, yVals1,
+#          'DataSet 1/Model 2')
 
 pylab.show()

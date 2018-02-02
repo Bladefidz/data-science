@@ -88,34 +88,35 @@ def fitData1(fileName):
 
 #fitData1('springData.txt')
 
-#xVals, yVals = getData('mysteryData.txt')
-#pylab.plot(xVals, yVals, 'o', label = 'Data Points')
-#pylab.title('Mystery Data')
-#
-##Try linear model
-#model1 = pylab.polyfit(xVals, yVals, 1)
-#pylab.plot(xVals, pylab.polyval(model1, xVals),
-#           label = 'Linear Model')
-#
-##Try a quadratic model
-#model2 = pylab.polyfit(xVals, yVals, 2)
-#pylab.plot(xVals, pylab.polyval(model2, xVals),
-#           'r--', label = 'Quadratic Model')
-#pylab.legend()
-#
-##Compare models
-#def aveMeanSquareError(data, predicted):
-#    error = 0.0
-#    for i in range(len(data)):
-#        error += (data[i] - predicted[i])**2
-#    return error/len(data)
+xVals, yVals = getData('mysteryData.txt')
+pylab.plot(xVals, yVals, 'o', label = 'Data Points')
+pylab.title('Mystery Data')
 
-#estYVals = pylab.polyval(model1, xVals)
-#print('Ave. mean square error for linear model =',
-#      aveMeanSquareError(yVals, estYVals))
-#estYVals = pylab.polyval(model2, xVals)
-#print('Ave. mean square error for quadratic model =',
-#      aveMeanSquareError(yVals, estYVals))
+#Try linear model
+model1 = pylab.polyfit(xVals, yVals, 1)
+pylab.plot(xVals, pylab.polyval(model1, xVals),
+          label = 'Linear Model')
+
+#Try a quadratic model
+model2 = pylab.polyfit(xVals, yVals, 2)
+pylab.plot(xVals, pylab.polyval(model2, xVals),
+          'r--', label = 'Quadratic Model')
+pylab.legend()
+pylab.show()
+
+#Compare models
+def aveMeanSquareError(data, predicted):
+   error = 0.0
+   for i in range(len(data)):
+       error += (data[i] - predicted[i])**2
+   return error/len(data)
+
+estYVals = pylab.polyval(model1, xVals)
+print('Ave. mean square error for linear model =',
+     aveMeanSquareError(yVals, estYVals))
+estYVals = pylab.polyval(model2, xVals)
+print('Ave. mean square error for quadratic model =',
+     aveMeanSquareError(yVals, estYVals))
 
 def rSquared(observed, predicted):
     error = ((predicted - observed)**2).sum()

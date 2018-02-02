@@ -9,7 +9,7 @@ import random, pylab, numpy
 
 #set line width
 pylab.rcParams['lines.linewidth'] = 4
-#set font size for titles 
+#set font size for titles
 pylab.rcParams['axes.titlesize'] = 20
 #set font size for labels on axes
 pylab.rcParams['axes.labelsize'] = 20
@@ -54,7 +54,7 @@ def getMeansAndSDs(population, sample, verbose = False):
         pylab.figure()
         makeHist(sample, 'Daily High 1961-2015, Sample\n' +\
                  '(mean = ' + str(round(sampleMean, 2)) + ')',
-                 'Degrees C', 'Number Days')   
+                 'Degrees C', 'Number Days')
         print('Population mean =', popMean)
         print('Standard deviation of population =',
               numpy.std(population))
@@ -89,4 +89,4 @@ for t in range(numTrials):
         numBad += 1
 print('Fraction outside 95% confidence interval =',
       numBad/numTrials)
-      
+
