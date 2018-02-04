@@ -77,6 +77,7 @@ class SimpleVirus(object):
 		if self.prob >= self.maxBirthProb * (1 - popDensity):
 			raise NoChildException
 		return SimpleVirus(self.maxBirthProb, self.clearProb)
+
 class Patient(object):
 	"""
 	Representation of a simplified patient. The patient does not take any drugs
