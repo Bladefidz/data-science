@@ -353,7 +353,7 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
     robot_type: class of robot to be instantiated (e.g. StandardRobot or
                 RandomWalkRobot)
     """
-    # anim = ps2_visualize.RobotVisualization(num_robots, width, height)  # Start animation
+    anim = ps2_visualize.RobotVisualization(num_robots, width, height)  # Start animation
 
     sumtime = 0
     for y in range(num_trials):
@@ -370,13 +370,13 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
                 pcl.append(r.room.getNumCleanedTiles() / r.room.getNumTiles())
             time += 1
             pc = max(pcl)
-            # anim.update(room, rc)  # Animate robot movement
+            anim.update(room, rc)  # Animate robot movement
         sumtime += time
-        # anim.done()  # End of animation
+        anim.done()  # End of animation
     return sumtime / num_trials
 
 # Uncomment this line to see how much your simulation takes on average
-# print(runSimulation(1, 1.0, 10, 10, 0.75, 30, StandardRobot))
+print(runSimulation(1, 1.0, 10, 10, 0.75, 30, StandardRobot))
 # print(runSimulation(2, 1.0, 8, 8, 0.80, 30, StandardRobot))
 # runSimulation(5, 1.0, 5, 5, 1.0, 30, StandardRobot)
 

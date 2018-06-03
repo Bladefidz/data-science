@@ -290,15 +290,15 @@ def evaluate_models_on_training(x, y, models):
 ### Begining of program
 raw_data = Climate('data.csv')
 
-# Problem 3
-y = []
-x = INTERVAL_1
-for year in INTERVAL_1:
-	y.append(raw_data.get_daily_temp('BOSTON', 1, 10, year))
-models = generate_models(x, y, [1])
-# models = generate_models1(x, y, [1])
-pylab.figure("Daily temperature: BOSTON 10 January")
-evaluate_models_on_training(x, y, models)
+# # Problem 3
+# y = []
+# x = INTERVAL_1
+# for year in INTERVAL_1:
+# 	y.append(raw_data.get_daily_temp('BOSTON', 1, 10, year))
+# models = generate_models(x, y, [1])
+# # models = generate_models1(x, y, [1])
+# pylab.figure("Daily temperature: BOSTON 10 January")
+# evaluate_models_on_training(x, y, models)
 
 # Problem 4: FILL IN MISSING CODE TO GENERATE y VALUES
 x1 = INTERVAL_1

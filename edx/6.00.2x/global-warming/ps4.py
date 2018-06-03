@@ -1,5 +1,5 @@
 import numpy as np
-import pylab
+import matplotlib.pyplot as plt
 import re
 import itertools
 import warnings
@@ -262,16 +262,16 @@ def evaluate_models_on_training(x, y, models):
 	for m in models:
 		esty = horner(m, x)
 		error = r_squared(y, esty)
-		pylab.plot(x, y, 'bo', label = 'Data')
-		pylab.plot(x, esty, 'r-', label = 'f(x)')
-		pylab.legend(loc = 'best')
+		plt.plot(x, y, 'bo', label = 'Data')
+		plt.plot(x, esty, 'r-', label = 'f(x)')
+		plt.legend(loc = 'best')
 		t = []
 		t.append('f(x): ')
 		t.append(get_model_label(m))
 		t.append('\n')
 		t.append('R^2: ')
 		t.append(str(round(error, 3)))
-		pylab.title(''.join(t))
+		plt.title(''.join(t))
 
 
 ### Begining of program
@@ -284,7 +284,7 @@ for year in INTERVAL_1:
 	y.append(raw_data.get_daily_temp('BOSTON', 1, 10, year))
 models = generate_models(x, y, [1])
 evaluate_models_on_training(x, y, models)
-
+plt.show()
 
 # Problem 4: FILL IN MISSING CODE TO GENERATE y VALUES
 x1 = INTERVAL_1
@@ -295,3 +295,4 @@ for year in INTERVAL_1:
 models = generate_models(x1, y, [1])
 # models = generate_models1(x1, y, [1])
 evaluate_models_on_training(x1, y, models)
+plt.show()
